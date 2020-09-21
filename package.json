@@ -1,0 +1,23 @@
+{
+  "name": "simple-paint",
+  "version": "1.0.0",
+  "description": "Really simple paint application for web browser",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./src -p 3002"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmd5a/simple-paint.git"
+  },
+  "author": "Piotr Szarmach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xmd5a/simple-paint/issues"
+  },
+  "homepage": "https://github.com/xmd5a/simple-paint#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}

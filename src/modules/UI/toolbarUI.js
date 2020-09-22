@@ -2,11 +2,12 @@ import { TOOLS } from '../tools/tools.js'
 import { pipe } from '../../utils/pipe.js';
 
 function ToolbarUI() {
+  this.tools = [];
   this.createUI();
-}
+};
 
 ToolbarUI.prototype.createUI = function() {
-  pipe(this.prepareTools, this.createToolButtons)(TOOLS);
+  pipe(this.prepareTools, this.createToolButtons.bind(this))(TOOLS);
 };
 
 ToolbarUI.prototype.prepareTools = function(tools) {
@@ -21,10 +22,11 @@ ToolbarUI.prototype.createToolButtons = function(tools) {
     toolElement.setAttribute('data-toolid', id);
     toolElement.classList.add(id);
     toolElement.innerHTML = name;
+    this.tools = [...this.tools, toolElement];
 
     toolbarElement.appendChild(toolElement);
   });
-}
+};
 
 export {
   ToolbarUI

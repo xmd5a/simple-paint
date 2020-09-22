@@ -2,14 +2,14 @@ import { pipe } from '../../utils/pipe.js';
 
 function CanvasUI() {
   this.canvas = this.createUI();
-}
+};
 
 CanvasUI.prototype.createUI = function() {
   const canvasWrapper = document.querySelector('#canvas');
   const canvasElement = pipe(getElementSize, createCanvas)(canvasWrapper);
 
   return canvasWrapper.appendChild(canvasElement);
-}
+};
 
 function getElementSize(wrapperNode) {
   const canvasWrapperBounding = wrapperNode.getBoundingClientRect()
@@ -19,7 +19,7 @@ function getElementSize(wrapperNode) {
     width,
     height
   }
-}
+};
 
 function createCanvas({ width, height }) {
   const canvasElement = document.createElement('canvas');
@@ -27,7 +27,7 @@ function createCanvas({ width, height }) {
   canvasElement.height = height;
 
   return canvasElement;
-}
+};
 
 export {
   CanvasUI

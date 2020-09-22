@@ -28,6 +28,9 @@ body {
   grid-area: toolbar;
   background-color: gray;
   border-top-left-radius: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .canvas {

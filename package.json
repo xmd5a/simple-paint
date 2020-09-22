@@ -4,7 +4,7 @@
   "description": "Really simple paint application for web browser",
   "main": "index.js",
   "scripts": {
-    "start": "http-server ./src -p 3002"
+    "start": "live-server ./src --port=3002"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,6 @@
   "homepage": "https://github.com/xmd5a/simple-paint#readme",
   "devDependencies": {},
   "dependencies": {
-    "http-server": "^0.12.3"
+    "live-server": "^1.2.1"
   }
 }

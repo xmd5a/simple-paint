@@ -2,7 +2,7 @@ import { TOOLS } from '../tools/tools.js';
 
 function ContextUI() {
   this.context = this.createUI();
-  this.updateContext(null)
+  this.updateContext(TOOLS.default)
 };
 
 ContextUI.prototype.createUI = function() {
@@ -13,12 +13,7 @@ ContextUI.prototype.createUI = function() {
 };
 
 ContextUI.prototype.updateContext = function(tool) {
-  const { context } = this.getContextForTool(tool);
-  this.context.innerHTML = context;
-};
-
-ContextUI.prototype.getContextForTool = function(searchById) {
-  return TOOLS.find((tool) => tool.id === searchById);
+  this.context.innerHTML = tool?.context || '🤷‍♂️ &nbsp; undefined tool';
 };
 
 export {

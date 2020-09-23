@@ -26,11 +26,27 @@ body {
 
 .toolbar {
   grid-area: toolbar;
+  display: grid;
+  align-content: center;
   background-color: gray;
   border-top-left-radius: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.toolbar .tool {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px;
+  background-color: ghostwhite;
+  border-bottom: 1px solid gray;
+}
+
+.toolbar .tool:hover {
+  background-color: turquoise;
 }
 
 .canvas {

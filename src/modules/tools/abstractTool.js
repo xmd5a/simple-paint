@@ -1,19 +1,16 @@
 function AbstractTool() {
-  this.name = 'Abstract Tool';
-  this.id = 'abstract-tool';
+  this.isDrawing = false;
 }
 
 AbstractTool.prototype.handleMouseDown = function() {
-  console.log('handleMouseDownAbstract');
+  this.isDrawing = true;
 };
 
-Brush.prototype.handleMouseUp = function() {
-  console.log('handleMouseUpAbstract');
+AbstractTool.prototype.handleMouseUp = function() {
+  this.isDrawing = false;
 };
 
-Brush.prototype.handleClick = function() {
-  console.log('handleClickAbstract');
-};
+AbstractTool.prototype.handleMouseMove = function() {};
 
 export {
   AbstractTool

@@ -7,25 +7,29 @@ function ToolbarUI() {
 };
 
 ToolbarUI.prototype.createUI = function() {
-  pipe(this.prepareTools, this.createToolButtons.bind(this))(TOOLS);
+  this.prepareTools(TOOLS);
 };
 
 ToolbarUI.prototype.prepareTools = function(tools) {
-  return tools.filter(({ id }) => id !== null);
-}
-
-ToolbarUI.prototype.createToolButtons = function(tools) {
   const toolbarElement = document.querySelector('#toolbar');
 
-  tools.forEach(({ name, id }) => {
-    const toolElement = document.createElement('li');
-    toolElement.setAttribute('data-toolid', id);
-    toolElement.classList.add(id);
-    toolElement.innerHTML = name;
+  for(const tool of tools) {
+    const { id, name, icon } = tool;
+    const toolElement = this.createToolButtons(id, name, icon);
     this.tools = [...this.tools, toolElement];
 
     toolbarElement.appendChild(toolElement);
-  });
+  };
+}
+
+ToolbarUI.prototype.createToolButtons = function(id, name, icon) {
+  const toolElement = document.createElement('li');
+  toolElement.setAttribute('data-toolid', id);
+  toolElement.classList.add(id);
+  toolElement.classList.add('tool');
+  toolElement.innerHTML = `${icon}<br />${name}`;
+
+  return toolElement;
 };
 
 export {

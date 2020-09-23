@@ -19,22 +19,22 @@ Canvas.prototype.handleCanvasActions = function() {
 };
 
 Canvas.prototype.handleMouseMove = function(e) {
-  const { x, y } = getMousePoisition(e);
+  const { x, y } = getMousePosition(e);
   this.currentTool.handleMouseMove(x, y, this.ctx);
 }
 
 
 Canvas.prototype.handleMouseDown = function(e) {
-  const { x, y } = getMousePoisition(e);
+  const { x, y } = getMousePosition(e);
   this.currentTool.handleMouseDown(x, y, this.ctx);
 }
 
 Canvas.prototype.handleMouseUp = function(e) {
-  const { x, y } = getMousePoisition(e);
+  const { x, y } = getMousePosition(e);
   this.currentTool.handleMouseUp(x, y, this.ctx);
 }
 
-function getMousePoisition(e) {
+function getMousePosition(e) {
   return {
     x: e.offsetX,
     y: e.offsetY

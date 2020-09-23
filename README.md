@@ -1,5 +1,5 @@
 # Simple Paint
-Really simple paint application for web browser.
+Really simple paint application for web browser in Vanilla JS.
 
 # start
 Copy repo and run
